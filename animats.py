@@ -6,7 +6,7 @@ import random
 actionNum = 3
 
 class Animat(cell.Cell):
-	SenseFoodRadius = 15
+	SenseFoodRadius = 10
 	MaxEnergy = 1000
 	Speeds = [[0, 1], [1, 0], [0, -1], [-1, 0]]
 
@@ -106,11 +106,11 @@ class Animat(cell.Cell):
 			nonfood = self.senseFood(nonfoods)
 			reward = 0
 			if food is not None and self.x == food.x and self.y == food.y and self.lastAction != 0:
-				self.eat()
 				if self.isHungry():
 					reward = 100
 				else:
-					reward = -1
+					reward = -50
+				self.eat()
 
 			if nonfood is not None and self.x == nonfood.x and self.y == nonfood.y and self.lastAction != 0:
 				reward = -100

@@ -41,7 +41,7 @@ class QLearn():
 		self.actions = actions
 		self.lastAction = None
 
-		self.q[((1, 1), 1)] = 1
+		#self.q[((1, 1), 1)] = 1
 
 	def setQ(self, state, action, value):
 		self.q[(state,action)] = value
